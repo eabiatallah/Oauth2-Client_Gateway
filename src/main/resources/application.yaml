@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: gateway
+  # OAuth2 client registration is configured programmatically in OAuth2ClientConfig
+  # instead of here; see that class for the "client" registration details.
+  cloud:
+    compatibility-verifier:
+      enabled: false # no Spring Cloud GA train yet targets Boot 4.1.x; 2025.1.x (Boot 4.0.x) works fine in practice
+
+server:
+  port: 8080 # must match the registered client's redirect-uri host/port on the authorization server
